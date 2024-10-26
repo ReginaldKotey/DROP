@@ -3,6 +3,59 @@ DROP is a thrilling JavaScript game where you control a bee dodging randomly fal
 
 [![p5.js Sketch](https://github.com/user-attachments/assets/551c89e0-0105-481f-9ddd-c3517e3d79fc)](https://editor.p5js.org/Rekas/full/ovpCxHx55)
 
+## Features
+
+- **Dynamic Difficulty**: The game adjusts the falling blocks' properties, such as speed and width, according to the current level.
+- **Scoring System**: Players earn points as blocks cross a certain height, enabling level progression.
+- **Collision Detection**: The game detects collisions between the player's cursor and falling blocks, playing sound effects upon interaction.
+- **Visual Feedback**: The blocks are drawn in real-time, enhancing the interactive experience.
+
+## Code Overview
+
+### [Block Class](https://github.com/ReginaldKotey/DROP/blob/main/DROP/Blocks.js)
+
+The `Block` class creates individual falling blocks with properties based on the current level. Here's a breakdown of its components:
+
+#### Constructor
+- **`constructor(lvl)`**: Initializes a block with random `x` and `y` coordinates, `width`, `height`, and `drop speed`. The level (`lvl`) determines the block's attributes.
+
+#### Main Methods
+- **`setBlock()`**: Assigns properties to the block based on the level:
+  - Varies the width of the block as the level increases.
+  - Randomizes the `x` coordinate and `drop speed` for a unique experience.
+  
+- **`drawBlock()`**: Renders the block on the canvas without strokes, filling it with a color.
+
+- **`move()`**: Updates the block's position by incrementing its `y` coordinate based on the drop speed.
+
+- **`getY()`**: Returns the current `y` coordinate of the block.
+
+### [DropBlocks Class](https://github.com/ReginaldKotey/DROP/blob/main/DROP/DropBlocks.js)
+
+The `dropBlocks` class manages the falling blocks, scorekeeping, and level progression. Here are its key components:
+
+#### Constructor
+- **`constructor(lvl, S1, S4, S5)`**: Initializes the class with the current level and sound objects.
+
+#### Main Methods
+- **`createBlock()`**: Generates a new block for each level and adds it to the block array.
+  
+- **`deleteBlock()`**: Removes blocks that have passed the bottom of the canvas:
+  - Increments the score and checks for level progression based on score thresholds.
+  
+- **`drop()`**: Moves each block down the canvas by calling their respective move methods and cleans up any that have exited the screen.
+
+- **`getlvl()`**: Returns the current level of the game.
+
+- **`getscore()`**: Returns the current score.
+
+- **`collision()`**: Detects if the player's cursor collides with any falling blocks. It plays sound effects upon collision and returns `true` if a collision occurs.
+
+- **`recreate()`**: Recreates blocks when needed, ensuring the game runs smoothly.
+
+- **`destructor()`**: Deletes all dynamic block objects to prevent memory leaks.
+
+
 ## [Background Scroll](https://github.com/ReginaldKotey/DROP/blob/main/DROP/backGS.js)
 
 ### Purpose
