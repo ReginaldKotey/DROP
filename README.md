@@ -3,7 +3,7 @@ DROP is a thrilling JavaScript game where you control a bee dodging randomly fal
 
 [![p5.js Sketch](https://github.com/user-attachments/assets/551c89e0-0105-481f-9ddd-c3517e3d79fc)](https://editor.p5js.org/Rekas/full/ovpCxHx55)
 
-## 1. Background Scroll (`BS`)
+## [Background Scroll](https://github.com/ReginaldKotey/DROP/blob/main/DROP/backGS.js)
 
 ### Purpose
 Controls the game background and scroll speed based on the current level.
@@ -17,7 +17,7 @@ Controls the game background and scroll speed based on the current level.
 - **showBG**: Displays the background according to the current level using a switch case. Scrolls continuously, resetting positions once they move out of view.
 - **printlvl**: Displays the level and score on the screen.
 
-## 2. Game Over (`gameOver`)
+## [Game Over](https://github.com/ReginaldKotey/DROP/blob/main/DROP/gameover.js)
 
 ### Purpose
 Manages the game over screen, showing the current and high scores and offering options to replay or return to the main menu.
@@ -29,7 +29,7 @@ Manages the game over screen, showing the current and high scores and offering o
 ### Methods
 - **show**: Displays the game over background, high score, and current score. Offers two buttons—"Main Menu" and "Retry"—with hover effects and sound effects on click.
 
-## 3. Help (`help`)
+## [Help](https://github.com/ReginaldKotey/DROP/blob/main/DROP/help.js)
 
 ### Purpose
 Displays the help or instructions page.
@@ -43,7 +43,7 @@ Displays the help or instructions page.
 - **instructions**: Provides specific gameplay instructions for the user.
 - **okay**: Checks if the "Okay" button is clicked to close the help page.
 
-## 4. Intro Page (`ipage`)
+## [Intro Page](https://github.com/ReginaldKotey/DROP/blob/main/DROP/intropage.js)
 
 ### Purpose
 The initial page where users select the level and start the game or access the help section.
@@ -59,10 +59,5 @@ The initial page where users select the level and start the game or access the h
 - **playbox**: Displays and checks interaction with the "Play" button.
 - **getlvl**: Returns the selected level.
 - **createhelp**: Generates a clickable help button.
-
-## Code Structure
-Each class is highly encapsulated with dedicated methods to update the UI based on user input, sound effects, and background transitions. The main game flow relies on setting and checking boolean values (`playbool`, `menubool`, `replaybool`, `helpbool`) to navigate between game states (main menu, in-game, help, game over). Sound effects accompany actions for a more interactive experience.
-
-This setup supports clear game-state transitions, keeping the logic for each component neatly organized in its respective class.
 
 
